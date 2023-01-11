@@ -1,0 +1,53 @@
+.content-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#emoodji {
+    font-size: 8rem;
+    line-height: 9rem;
+    white-space: nowrap;
+}
+
+#repo {
+    font-size: 60%;
+    color: gray;
+    text-align: center;
+}
+
+#powered-by {
+    margin-top: 1em;
+    margin-right: 1.5em;
+}
+
+#powered-by img {
+    margin-left: 1em;
+}
+
+.clr-row {
+    align-items: center;
+    justify-content: center;
+}
+
+.clr-col {
+    width: auto;
+    flex-grow: 0;
+}
+
+.title {
+    margin-left: 5px;
+}
+
+.card {
+    cursor: pointer;
+}
+
+svg {
+    width: 24px;
+    height: 24px;
+}
+
+.github-fork-ribbon.right-bottom:before {
+    background-color: #333;
+}

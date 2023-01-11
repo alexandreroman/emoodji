@@ -1,0 +1,10 @@
+spring:
+  sql:
+    init:
+      platform: none
+      mode: never
+  data:
+    redis:
+      # Workaround for https://github.com/spring-cloud/spring-cloud-bindings/issues/87:
+      host: ${spring.redis.host}
+      password: ${spring.redis.password}

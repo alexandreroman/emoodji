@@ -1,0 +1,34 @@
+apiVersion: carto.run/v1alpha1
+kind: Workload
+metadata:
+  name: emoodji
+  labels:
+    apps.tanzu.vmware.com/workload-type: web
+    apps.tanzu.vmware.com/has-tests: true
+    apps.tanzu.vmware.com/language: java
+    app.kubernetes.io/part-of: emoodji
+spec:
+  source:
+    git:
+      url: https://github.com/alexandreroman/emoodji
+      ref:
+        branch: main
+  params:
+  - name: annotations
+    value:
+      autoscaling.knative.dev/minScale: "0"
+  build:
+    env:
+    - name: BP_JVM_VERSION
+      value: "17"
+#  env:
+#  - name: SPRING_PROFILES_ACTIVE
+#    #! Possible values: hsqldb (in-memory database), postgres or redis
+#    value: postgres
+#  serviceClaims:
+#  - name: db
+#    ref:
+#      apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+#      kind: ResourceClaim
+#      #! Possible values: emoodji-db-postgres-claim or emoodji-db-redis-claim
+#      name: emoodji-db-postgres-claim

@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: emoodji
+  sql:
+    init:
+      mode: always
+      platform: hsqldb
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+logging:
+  level:
+    com:
+      vmware:
+        tanzu:
+          demos: INFO

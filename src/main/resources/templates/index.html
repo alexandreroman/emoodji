@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/clr-ui.min.css"/>
+    <link rel="stylesheet" href="/gh-fork-ribbon.min.css"/>
+    <script src="/axios.min.js"></script>
+    <script src="/app.js"></script>
+    <link href="/custom.css" rel="stylesheet">
+    <title>Emoodji</title>
+</head>
+
+<body onload="getEmoodji();">
+<div class="main-container">
+    <header class="header-6">
+        <div class="branding">
+            <a class="nav-link">
+                <span class="title">🥳 Emoodji</span>
+            </a>
+        </div>
+        <div class="header-actions">
+            <div id="powered-by">Powered by<img src="/tap.png" alt="VMware Tanzu Application Platform"/></div>
+        </div>
+    </header>
+    <div class="content-container">
+        <div class="content-area">
+            <div class="clr-row">
+                <div class="clr-col">
+                    <div class="card" onclick="reloadEmoodji();">
+                        <div class="card-block">
+                            <div class="card-text"><span id="emoodji">🤔</span></div>
+                        </div>
+                        <div id="repo">Using: <span th:text="${ repo }"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a class="github-fork-ribbon right-bottom fixed" href="https://github.com/alexandreroman/emoodji"
+   data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+</body>
+</html>

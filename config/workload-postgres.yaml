@@ -1,7 +1,7 @@
 apiVersion: carto.run/v1alpha1
 kind: Workload
 metadata:
-  name: emoodji
+  name: emoodji-postgres
   labels:
     apps.tanzu.vmware.com/workload-type: web
     apps.tanzu.vmware.com/has-tests: "true"
@@ -20,3 +20,12 @@ spec:
     env:
     - name: BP_JVM_VERSION
       value: "17"
+  env:
+  - name: SPRING_PROFILES_ACTIVE
+    value: postgres
+  serviceClaims:
+  - name: db
+    ref:
+      apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+      kind: ResourceClaim
+      name: emoodji-db-postgres-claim

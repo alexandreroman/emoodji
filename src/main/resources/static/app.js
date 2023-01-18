@@ -1,15 +1,19 @@
 function reloadEmoodji() {
     console.log("Synchronizing emoodji");
+    document.getElementById("loading").style.display = "inline";
     axios.post("/api/v1/emoodji").then(res => {
         document.getElementById("emoodji").innerText = res.data;
+        document.getElementById("loading").style.display = "none";
         clearSelection();
     });
 };
 
 function getEmoodji() {
     console.log("Loading emoodji");
+    document.getElementById("loading").style.display = "inline";
     axios.get("/api/v1/emoodji").then(res => {
         document.getElementById("emoodji").innerText = res.data;
+        document.getElementById("loading").style.display = "none";
         clearSelection();
     });
 };

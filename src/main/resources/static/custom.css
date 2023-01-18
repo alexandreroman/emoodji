@@ -48,6 +48,11 @@ svg {
     height: 24px;
 }
 
+#loading {
+    margin-left: 5px;
+    display: none;
+}
+
 .github-fork-ribbon.right-bottom:before {
     background-color: #333;
 }

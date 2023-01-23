@@ -16,3 +16,5 @@ logging:
       vmware:
         tanzu:
           demos: INFO
+app:
+  title: Emoodji

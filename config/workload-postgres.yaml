@@ -21,6 +21,8 @@ spec:
     - name: BP_JVM_VERSION
       value: "17"
   env:
+  - name: APP_TITLE
+    value: Emoodji with PostgreSQL
   - name: SPRING_PROFILES_ACTIVE
     value: postgres
   serviceClaims:

@@ -16,6 +16,7 @@
 
 package com.vmware.tanzu.demos.emoodji;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -31,7 +32,9 @@ public class EmoodjiIndexController {
     }
 
     @GetMapping("/")
-    ModelAndView index() {
-        return new ModelAndView("index", Map.of("repo", repo.toString()));
+    ModelAndView index(@Value("${app.title}") String appTitle) {
+        return new ModelAndView("index",
+                Map.of("repo", repo.toString(),
+                        "title", appTitle));
     }
 }

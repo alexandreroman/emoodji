@@ -9,7 +9,7 @@
     <script src="/axios.min.js"></script>
     <script src="/app.js"></script>
     <link href="/custom.css" rel="stylesheet">
-    <title>Emoodji</title>
+    <title th:text="${ title }">Title</title>
 </head>
 
 <body onload="getEmoodji();">
@@ -17,7 +17,7 @@
     <header class="header-6">
         <div class="branding">
             <a class="nav-link">
-                <span class="title">🥳 Emoodji</span>
+                <span class="title">🥳 <span th:text="${ title }">Title</span></span>
                 <span id="loading"><img src="/loading.gif" width="25" height="25"/></span>
             </a>
         </div>

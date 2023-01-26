@@ -17,7 +17,7 @@
 }
 
 #powered-by {
-    margin-top: 1em;
+    margin-top: 0.8em;
     margin-right: 1em;
 }
 
@@ -41,11 +41,6 @@
 
 .card {
     cursor: pointer;
-}
-
-svg {
-    width: 24px;
-    height: 24px;
 }
 
 #loading {

@@ -1,0 +1,6 @@
+#! helm upgrade emoodji-db-postgres bitnami/postgresql -n $TAP_NS --version 12.1.13 --install -f config/app-operator/postgresql-values.yaml
+image:
+  tag: 12
+auth:
+  postgresPassword: changeme
+  database: postgres

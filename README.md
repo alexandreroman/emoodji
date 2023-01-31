@@ -65,9 +65,7 @@ in the TAP developer namespace:
 
 ```shell
 helm repo update && \
-helm upgrade emoodji-db-postgres bitnami/postgresql -n $TAP_NS \
---version 12.1.9 --install --set auth.postgresPassword=changeme \
---set image.tag=12
+helm upgrade emoodji-db-postgres bitnami/postgresql -n $TAP_NS --version 12.1.13 --install -f config/app-operator/postgresql-values.yaml
 ```
 
 Note the password for accessing the database: `changeme`.
@@ -135,8 +133,7 @@ As a platform operator, let's create a Redis database instance:
 
 ```shell
 helm repo update && \
-helm upgrade emoodji-db-redis bitnami/redis -n $TAP_NS --version 17.4.2 --install \
---set auth.password=changeme --set replica.replicaCount=1
+helm upgrade emoodji-db-redis bitnami/redis -n $TAP_NS --version 17.4.2 --install -f config/app-operator/redis-values.yaml
 ```
 
 Next, create a binding secret for Redis and deploy it to the TAP developer namespace:

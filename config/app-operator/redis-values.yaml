@@ -1,0 +1,7 @@
+#! helm upgrade emoodji-db-redis bitnami/redis -n $TAP_NS --version 17.4.2 --install -f config/app-operator/redis-values.yaml
+auth:
+  password: changeme
+replica:
+  replicaCount: 1
+metrics:
+  enabled: true

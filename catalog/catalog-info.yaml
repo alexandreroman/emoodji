@@ -10,7 +10,7 @@ metadata:
   - web
   - tanzu
   annotations:
-    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=emoodji'
+    backstage.io/kubernetes-label-selector: app.kubernetes.io/part-of=emoodji
 spec:
   type: service
   lifecycle: experimental

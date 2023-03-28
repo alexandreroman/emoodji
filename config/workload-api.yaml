@@ -5,6 +5,7 @@ metadata:
   labels:
     apps.tanzu.vmware.com/workload-type: web
     apps.tanzu.vmware.com/has-tests: "true"
+    apis.apps.tanzu.vmware.com/register-api: "true"
     app.kubernetes.io/part-of: emoodji
 spec:
   source:
@@ -16,6 +17,14 @@ spec:
   - name: annotations
     value:
       autoscaling.knative.dev/min-scale: "0"
+  - name: api_descriptor
+    value:
+      type: openapi
+      location:
+        path: /v3/api-docs
+      owner: default-team
+      system: emoodji
+      description: Emoodji API
   build:
     env:
     - name: BP_JVM_VERSION

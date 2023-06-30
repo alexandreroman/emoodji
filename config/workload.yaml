@@ -16,6 +16,10 @@ spec:
   - name: annotations
     value:
       autoscaling.knative.dev/minScale: "0"
+  - name: testing_pipeline_matching_labels
+    value:
+      apps.tanzu.vmware.com/pipeline: test
+      apps.tanzu.vmware.com/language: java
   build:
     env:
     - name: BP_JVM_VERSION
